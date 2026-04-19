@@ -16,8 +16,8 @@ import pymysql  # <--- AÑADIR ESTO
 pymysql.install_as_MySQLdb()  # <--- AÑADIR ESTO
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
-TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates') 
-STATIC_DIR = os.path.join(BASE_DIR, 'static') 
+TEMPLATES_DIR = os.path.join(BASE_DIR, 'mainApp', 'templates')
+STATIC_DIR = os.path.join(BASE_DIR, 'static')
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.2/howto/deployment/checklist/
