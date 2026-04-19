@@ -10,3 +10,6 @@ def lista_tareas(request):
     
     tareas = Tarea.objects.all()
     return render(request, 'index.html', {'tareas': tareas})
+
+def index(request):
+    return render(request, 'index.html')
