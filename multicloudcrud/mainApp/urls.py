@@ -1,9 +1,7 @@
-from django.urls import path
-from . import views
+from django.contrib import admin
+from django.urls import path, include
 
 urlpatterns = [
-    path('', views.index, name='index'), # Aquí es donde realmente llamas a tu función index
-    path('tareas/', views.lista_tareas, name='lista_tareas'), # Cambiamos la ruta para que no choquen
-    path('eliminar/<int:tarea_id>/', views.eliminar_tarea, name='eliminar'),
-    path('completar/<int:tarea_id>/', views.completar_tarea, name='completar'),
+    path('admin/', admin.site.urls),
+    path('', include('mainApp.urls')), # Esto conecta con el código que me acabas de pasar
 ]

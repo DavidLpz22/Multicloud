@@ -12,9 +12,8 @@ https://docs.djangoproject.com/en/5.2/ref/settings/
 
 from pathlib import Path
 import os
-import pymysql  # <--- AÑADIR ESTO
-pymysql.install_as_MySQLdb()  # <--- AÑADIR ESTO
-# Build paths inside the project like this: BASE_DIR / 'subdir'.
+import pymysql  
+pymysql.install_as_MySQLdb() 
 BASE_DIR = Path(__file__).resolve().parent.parent
 TEMPLATES_DIR = os.path.join(BASE_DIR, 'mainApp', 'templates')
 STATIC_DIR = os.path.join(BASE_DIR, 'static')
@@ -22,7 +21,6 @@ STATIC_DIR = os.path.join(BASE_DIR, 'static')
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.2/howto/deployment/checklist/
 
-# SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'django-insecure-+(d*erqyg0i98w=*+99%m_@#hh@63a^&(p&@vkg)ia9x83x0fs'
 
 # SECURITY WARNING: don't run with debug turned on in production!
@@ -83,13 +81,8 @@ DATABASES = {
         'PASSWORD': 'multicloud123',
         'HOST': 'database-1.crc0ciiw2k12.us-east-1.rds.amazonaws.com',
         'PORT': '3306',
-        'OPTIONS': {
-            'init_command': "SET sql_mode='STRICT_TRANS_TABLES'",
-        },
     }
 }
-# No olvides permitir la IP de tu EC2 o '*' para la prueba
-ALLOWED_HOSTS = ['*']
 
 # Password validation
 # https://docs.djangoproject.com/en/5.2/ref/settings/#auth-password-validators
