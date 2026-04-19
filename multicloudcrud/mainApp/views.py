@@ -12,4 +12,13 @@ def lista_tareas(request):
     return render(request, 'index.html', {'tareas': tareas})
 
 def index(request):
-    return render(request, 'index.html')
+    if request.method == 'POST':
+        # Guardar la tarea
+        titulo = request.POST.get('titulo')
+        descripcion = request.POST.get('descripcion')
+        Tarea.objects.create(titulo=titulo, descripcion=descripcion)
+        return redirect('index') # Recarga la página para mostrar la nueva tarea
+
+    # Obtener todas las tareas para mostrarlas
+    tareas = Tarea.objects.all().order_by('-id')
+    return render(request, 'index.html', {'tareas': tareas})
