@@ -71,19 +71,20 @@ TEMPLATES = [
 WSGI_APPLICATION = 'multicloudcrud.wsgi.application'
 
 
-# Database
-# https://docs.djangoproject.com/en/5.2/ref/settings/#databases
+
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'TareaAws', 
-        'USER': 'admin',
-        'PASSWORD': 'multicloud123',
-        'HOST': 'database-1.crc0ciiw2k12.us-east-1.rds.amazonaws.com',
+        'ENGINE': 'django.db.backends.oracle',
+        'NAME': 'OracleDB', 
+        'USER': 'david',
+        'PASSWORD': 'Inacap.2026',
+        'HOST': '10.0.0.190',
         'PORT': '3306',
+        'OPTIONS': {
+            'init_command': "SET sql_mode='STRICT_TRANS_TABLES'",
+        },
     }
 }
-
 # Password validation
 # https://docs.djangoproject.com/en/5.2/ref/settings/#auth-password-validators
 
