@@ -78,7 +78,7 @@ DATABASES = {
         'NAME': 'OracleDB', 
         'USER': 'david',
         'PASSWORD': 'Inacap.2026',
-        'HOST': '127.0.0.1',
+        'HOST': '10.0.0.190',
         'PORT': '3306',
         'OPTIONS': {
             'init_command': "SET sql_mode='STRICT_TRANS_TABLES'",
