@@ -74,11 +74,11 @@ WSGI_APPLICATION = 'multicloudcrud.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.oracle',
-        'NAME': 'OracleDB', 
+        'ENGINE': 'django.db.backends.mysql', # Cambiado a MySQL porque usas HeatWave
+        'NAME': 'OracleDB',                   # Asegúrate que este sea el nombre de la BD en OCI
         'USER': 'david',
         'PASSWORD': 'Inacap.2026',
-        'HOST': '10.0.0.190',
+        'HOST': '127.0.0.1',                  # OBLIGATORIO: Para que pase por el túnel SSH
         'PORT': '3306',
         'OPTIONS': {
             'init_command': "SET sql_mode='STRICT_TRANS_TABLES'",
